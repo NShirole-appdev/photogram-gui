@@ -10,7 +10,7 @@
 
   <dt>Caption</dt>
   <dd>
-    <p><% @the_photo.caption %></p>
+    <p><%= @the_photo.caption %></p>
   </dd>
 
   <dt>Owner</dt>
@@ -25,12 +25,12 @@
 
   <dt>Edit photo</dt>
   <dd>
-    <form action="/update_photo/<% @the_photo.id %>">
+    <form action="/update_photo/<%= @the_photo.id %>">
       <label for="browser_image">Image</label>
-      <input id="browser_image" type="text" name="input_image" placeholder="Enter a URL for the image..." value="https://robohash.org/dolorehicincidunt.png?size=300x300&amp;set=set1">
+       <input id="browser_image" type="text" name="query_image" placeholder="Enter a URL for the image..." value="<%= @the_photo.image %>">
 
       <label for="browser_caption">Caption</label>
-      <textarea id="browser_caption" name="input_caption" placeholder="Enter a caption for the photo...">Once you’ve accepted your flaws, no one can use them against you.</textarea>
+      <textarea id="browser_caption" name="query_caption" placeholder="Enter a caption for the photo...">"<%= @the_photo.caption %>"</textarea>
 
       <button>Update photo</button>
     </form>
@@ -71,3 +71,17 @@
 
 
 <h3>Add a new comment</h3>
+
+<form action="/insert_comment_record">
+  <label for="browser_photo_id">Photo ID</label>
+  <input id="browser_photo_id" type="text" value="777" name="input_photo_id">
+
+  <label for="browser_author_id">Author ID</label>
+  <input id="browser_author_id" type="text" name="input_author_id">
+
+  <label for="browser_comment">Comment</label>
+  <textarea id="browser_comment" name="input_body" placeholder="Enter a comment..."></textarea>
+
+  <button>Add comment</button>
+</form>
+
