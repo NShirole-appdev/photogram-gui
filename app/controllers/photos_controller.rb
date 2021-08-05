@@ -91,6 +91,5 @@ class PhotosController < ApplicationController
     a_new_comment.save
 
     redirect_to("/photos/" + input_photo_id.to_s)
-
   end
 end
