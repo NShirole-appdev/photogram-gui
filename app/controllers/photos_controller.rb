@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
   def show
     #parameter is path_id = 888
     
-    @url_id = params.fetch("path_id")
+    @url_id = params.fetch("path_id").to_i
     matching_photos = Photo.where({ :id => @url_id})
 
     @the_photo = matching_photos.at(0)
@@ -89,7 +89,7 @@ class PhotosController < ApplicationController
     a_new_comment.body = input_body
     
     a_new_comment.save
-
     redirect_to("/photos/" + input_photo_id.to_s)
+
   end
 end

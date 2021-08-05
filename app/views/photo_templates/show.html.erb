@@ -1,7 +1,5 @@
 <h1>Photo Details</h1>
 
-
-
 <dl>
   <dt>Image</dt>
   <dd>
@@ -74,7 +72,7 @@
 
 <form action="/insert_comment_record">
   <label for="browser_photo_id">Photo ID</label>
-  <input id="browser_photo_id" type="text" value="777" name="input_photo_id">
+  <input id="browser_photo_id" type="text" value="<%= @the_photo.id %>" name="input_photo_id">
 
   <label for="browser_author_id">Author ID</label>
   <input id="browser_author_id" type="text" name="input_author_id">
